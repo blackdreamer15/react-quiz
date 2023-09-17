@@ -14,19 +14,28 @@ const initialState = {
   status: "loading",
   questionIndex: 0,
   userAnswer: null,
+  points: 0,
 };
 
 function reducer(state, action) {
   switch (action.type) {
     case "dataReceived":
       return { ...state, status: "ready", questions: action.payload };
-
     case "dataFailed":
       return { ...state, status: "error" };
     case "startQuiz":
       return { ...state, status: "active" };
     case "selectedAnswer":
-      return { ...state, userAnswer: action.payload };
+      const currQuestion = state.questions[state.questionIndex];
+
+      return {
+        ...state,
+        userAnswer: action.payload,
+        points:
+          action.payload === currQuestion.correctOption
+            ? state.points + currQuestion.points
+            : state.points
+      };
     case "nextQuestion":
       return { ...state, questionIndex: state.questionIndex + 1, userAnswer: null };
 
