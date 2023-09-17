@@ -1,4 +1,4 @@
-function Question() {
+function Question({ questions }) {
     return (
         <div>
 

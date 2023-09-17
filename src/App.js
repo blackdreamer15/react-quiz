@@ -59,7 +59,7 @@ export default function App() {
             onStart={handleStart}
           />
         )}
-        {status === "active" && <Question />}
+        {status === "active" && <Question questions={questions} />}
       </Main>
     </div>
   );
