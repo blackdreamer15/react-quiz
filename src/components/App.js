@@ -15,7 +15,6 @@ const initialState = {
   questionIndex: 0,
   userAnswer: null,
   points: 0,
-  progress: 0,
 };
 
 function reducer(state, action) {
@@ -32,7 +31,6 @@ function reducer(state, action) {
       return {
         ...state,
         userAnswer: action.payload,
-        progress: state.progress + 1,
         points:
           action.payload === currQuestion.correctOption
             ? state.points + currQuestion.points
@@ -46,7 +44,7 @@ function reducer(state, action) {
 }
 
 export default function App() {
-  const [{ questions, status, questionIndex, userAnswer, points, progress }, dispatch] = useReducer(reducer, initialState);
+  const [{ questions, status, questionIndex, userAnswer, points }, dispatch] = useReducer(reducer, initialState);
 
   const numOfQuestions = questions.length;
   const maxPossiblePoints = questions.reduce((prev, curr) => (prev + curr.points), 0);
@@ -77,10 +75,10 @@ export default function App() {
         {status === "active" && (
           <>
             <Progress
-              progress={progress}
+              userAnswer={userAnswer}
               points={points}
               maxPossiblePoints={maxPossiblePoints}
-              index={questionIndex + 1}
+              index={questionIndex}
               numOfQuestions={numOfQuestions}
             />
             <Question
