@@ -1,5 +1,3 @@
-import { type } from "@testing-library/user-event/dist/type";
-
 function QuestionOptions({ question, dispatch, usserAnswer }) {
     return (
         <ul className="options">
