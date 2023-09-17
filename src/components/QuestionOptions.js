@@ -27,7 +27,11 @@ function QuestionOptions({ question, dispatch, userAnswer }) {
                 }
             </ul >
 
-            <button className="btn" onClick={() => dispatch({})}>Next</button>
+            <button
+                className="btn" onClick={() => dispatch({ type: "nextQuestion" })}
+            >
+                Next
+            </button>
         </>
     );
 }
