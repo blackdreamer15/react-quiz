@@ -10,8 +10,8 @@ const initialState = {
 
 function reducer(state, action) {
   switch (action.type) {
-    case :
-      return;
+    case "dataReceived":
+      return { ...state, questions: action.payload };
     case :
       return;
     case :
@@ -29,7 +29,7 @@ export default function App() {
   useEffect(function () {
     fetch("http://localhost:8000/questions")
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => dispatch({ type: "dataReceived", payload: data }))
       .catch((err) => console.error(err));
   },
     []
