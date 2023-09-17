@@ -5,7 +5,15 @@ function QuestionOptions({ question, dispatch, userAnswer }) {
         <ul className="options">
             {question.options.map((option, index) => (
                 <button
-                    className="btn btn-option"
+                    className={`btn btn-option ${userAnswer === index ? "answer" : ""} 
+                    ${hasAnswered
+                            ? index === question.correctOption
+                                ? "correct"
+                                : "wrong"
+                            : ""
+                        }`
+                    }
+
                     onClick={() => dispatch({
                         type: "selectedAnswer",
                         payload: index
@@ -14,8 +22,9 @@ function QuestionOptions({ question, dispatch, userAnswer }) {
                 >
                     {option}
                 </button>
-            ))}
-        </ul>
+            ))
+            }
+        </ul >
     );
 }
 
