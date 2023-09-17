@@ -13,7 +13,7 @@ function QuestionOptions({ question, dispatch, userAnswer }) {
                             : ""
                         }`
                     }
-
+                    disabled={hasAnswered ? true : false}
                     onClick={() => dispatch({
                         type: "selectedAnswer",
                         payload: index
