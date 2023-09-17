@@ -44,7 +44,7 @@ function reducer(state, action) {
 }
 
 export default function App() {
-  const [{ questions, status, questionIndex, userAnswer }, dispatch] = useReducer(reducer, initialState);
+  const [{ questions, status, questionIndex, userAnswer, points }, dispatch] = useReducer(reducer, initialState);
 
   const numOfQuestions = questions.length;
 
