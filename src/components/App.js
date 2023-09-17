@@ -73,7 +73,11 @@ export default function App() {
         )}
         {status === "active" && (
           <>
-            <Progress index={questionIndex + 1} numOfQuestions={numOfQuestions} />
+            <Progress
+              points={points}
+              index={questionIndex + 1}
+              numOfQuestions={numOfQuestions}
+            />
             <Question
               question={questions[questionIndex]}
               dispatch={dispatch}
