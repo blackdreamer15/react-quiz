@@ -27,11 +27,11 @@ function QuestionOptions({ question, dispatch, userAnswer }) {
                 }
             </ul >
 
-            <button
+            {hasAnswered && <button
                 className="btn" onClick={() => dispatch({ type: "nextQuestion" })}
             >
                 Next
-            </button>
+            </button>}
         </>
     );
 }
