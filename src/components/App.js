@@ -11,6 +11,7 @@ const initialState = {
   //loading, error, ready, active, finished
   status: "loading",
   questionIndex: 0,
+  userAnswer: null,
 };
 
 function reducer(state, action) {
@@ -30,7 +31,7 @@ function reducer(state, action) {
 }
 
 export default function App() {
-  const [{ questions, status, questionIndex }, dispatch] = useReducer(reducer, initialState);
+  const [{ questions, status, questionIndex, userAnswer }, dispatch] = useReducer(reducer, initialState);
 
   const numOfQuestions = questions.length;
 
