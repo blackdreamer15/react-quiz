@@ -43,9 +43,6 @@ export default function App() {
     []
   );
 
-  function handleStart() {
-    dispatch({ type: "startQuiz" });
-  }
 
   return (
     <div className="app">
@@ -57,7 +54,7 @@ export default function App() {
         {status === "ready" && (
           <StartScreen
             numOfQuestions={numOfQuestions}
-            onStart={handleStart}
+            dispatch={dispatch}
           />
         )}
         {status === "active" && (
