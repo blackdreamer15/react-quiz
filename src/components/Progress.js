@@ -1,9 +1,9 @@
-function Progress({ index, numOfQuestions }) {
+function Progress({ index, numOfQuestions, points }) {
     return (
         <section className="progress">
             <progress value={0} min={0} max={numOfQuestions}></progress>
             <p>Question <strong>{index}</strong> / {numOfQuestions}</p>
-            <p><strong>X</strong> / X points</p>
+            <p><strong>{points}</strong> / X points</p>
         </section>
     );
 }
