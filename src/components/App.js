@@ -47,6 +47,7 @@ export default function App() {
   const [{ questions, status, questionIndex, userAnswer, points }, dispatch] = useReducer(reducer, initialState);
 
   const numOfQuestions = questions.length;
+  const maxPossiblePoints = questions.reduce((prev, curr) => (prev + curr.points), 0);
 
   useEffect(function () {
     fetch("http://localhost:8000/questions")
@@ -75,6 +76,7 @@ export default function App() {
           <>
             <Progress
               points={points}
+              maxPossiblePoints={maxPossiblePoints}
               index={questionIndex + 1}
               numOfQuestions={numOfQuestions}
             />
