@@ -42,6 +42,10 @@ function reducer(state, action) {
         ...state,
         questionIndex: state.questionIndex + 1,
         userAnswer: null,
+      };
+    case "finished":
+      return {
+        ...state,
         status:
           state.questionIndex === state.questions.length - 1
             ? "finished"
@@ -95,10 +99,17 @@ export default function App() {
               dispatch={dispatch}
               userAnswer={userAnswer}
             />
-            <NextButton dispatch={dispatch} userAnswer={userAnswer} />
+            <NextButton
+              dispatch={dispatch}
+              userAnswer={userAnswer}
+              index={questionIndex}
+              numOfQuestions={numOfQuestions}
+            />
           </>
         )}
-        {status === "finished" && <FinishedScreen />}
+        {status === "finished" && (
+          <FinishedScreen points={points} maxPossiblePoints={maxPossiblePoints} />
+        )}
       </Main>
     </div>
   );
