@@ -25,6 +25,8 @@ function reducer(state, action) {
       return { ...state, status: "active" };
     case "selectedAnswer":
       return { ...state, userAnswer: action.payload };
+    case "nextQuestion":
+      return { ...state, questionIndex: state.questionIndex + 1 };
 
     default: throw new Error("The action is unknown");
   }
