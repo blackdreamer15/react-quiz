@@ -12,6 +12,7 @@ function reducer(state, action) {
   switch (action.type) {
     case "dataReceived":
       return { ...state, status: "ready", questions: action.payload };
+
     case :
       return;
     case :
@@ -19,7 +20,7 @@ function reducer(state, action) {
     case :
       return;
 
-    default:
+    default: throw new Error("The action is unknown");
   }
 }
 
