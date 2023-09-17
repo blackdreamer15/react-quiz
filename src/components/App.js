@@ -61,6 +61,8 @@ export default function App() {
         {status === "active" && (
           <Question
             question={questions[questionIndex]}
+            dispatch={dispatch}
+            userAnswer={userAnswer}
           />
         )}
       </Main>
