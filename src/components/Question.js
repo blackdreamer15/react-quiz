@@ -5,7 +5,11 @@ function Question({ question, dispatch, userAnswer }) {
         <div>
             <h4>{question.question}</h4>
 
-            <QuestionOptions question={question} />
+            <QuestionOptions
+                question={question}
+                dispatch={dispatch}
+                userAnswer={userAnswer}
+            />
         </div>
     );
 }
