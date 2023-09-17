@@ -1,9 +1,12 @@
+import { type } from "@testing-library/user-event/dist/type";
+
 function QuestionOptions({ question, dispatch, usserAnswer }) {
     return (
         <ul className="options">
-            {question.options.map((option) => (
+            {question.options.map((option, index) => (
                 <button
                     className="btn btn-option"
+                    onClick={() => dispatch({ type: "selectedAnswer", payload: index })}
                     key={option}
                 >
                     {option}
