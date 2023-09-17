@@ -19,8 +19,8 @@ function reducer(state, action) {
 
     case "dataFailed":
       return { ...state, status: "error" };
-    // case :
-    //   return;
+    case "startQuiz":
+      return { ...state, status: "active" };
     // case :
     //   return;
 
@@ -43,7 +43,7 @@ export default function App() {
   );
 
   function handleStart() {
-
+    dispatch({ type: "startQuiz" });
   }
 
   return (
