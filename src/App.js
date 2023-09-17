@@ -42,7 +42,9 @@ export default function App() {
     []
   );
 
+  function handleStart() {
 
+  }
 
   return (
     <div className="app">
@@ -51,7 +53,12 @@ export default function App() {
       <Main>
         {status === "loading" && <Loader />}
         {status === "error" && <Error />}
-        {status === "ready" && <StartScreen numOfQuestions={numOfQuestions} />}
+        {status === "ready" && (
+          <StartScreen
+            numOfQuestions={numOfQuestions}
+            onStart={handleStart}
+          />
+        )}
         {status === "active" && <Question />}
       </Main>
     </div>
