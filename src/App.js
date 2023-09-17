@@ -2,10 +2,25 @@ import { useEffect, useReducer } from "react";
 import Header from "./Header";
 import Main from "./Main";
 
-const initialState = {};
+const initialState = {
+  questions: [],
+  //loading, error, ready, active, finished
+  status: "loading"
+};
 
 function reducer(state, action) {
+  switch (action.type) {
+    case :
+      return;
+    case :
+      return;
+    case :
+      return;
+    case :
+      return;
 
+    default:
+  }
 }
 
 export default function App() {
