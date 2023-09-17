@@ -23,8 +23,8 @@ function reducer(state, action) {
       return { ...state, status: "error" };
     case "startQuiz":
       return { ...state, status: "active" };
-    // case :
-    //   return;
+    case "selectedAnswer":
+      return { ...state, userAnswer: action.payload };
 
     default: throw new Error("The action is unknown");
   }
