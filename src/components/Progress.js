@@ -1,4 +1,4 @@
-function Progress({ index, numOfQuestions, points }) {
+function Progress({ index, numOfQuestions, points, maxPossiblePoints }) {
     return (
         <section className="progress">
             <progress value={0} min={0} max={numOfQuestions}></progress>
