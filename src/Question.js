@@ -6,7 +6,7 @@ function Question({ question }) {
                 {question.options.map((option) => (
                     <button
                         className="btn btn-option"
-                        key="option"
+                        key={option}
                     >
                         {option}
                     </button>
