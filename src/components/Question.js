@@ -1,4 +1,4 @@
-import QuestionOptions from "./components/QuestionOptions";
+import QuestionOptions from "./QuestionOptions";
 
 function Question({ question }) {
     return (
